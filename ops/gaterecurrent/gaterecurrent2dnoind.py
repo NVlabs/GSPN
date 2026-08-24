@@ -67,7 +67,7 @@ gaterecurrent = GateRecurrent2dnoindFunction.apply
 def gaterecurrent2dnoind_pytorch(X, B, G1, G2, G3):
 	"""PyTorch implementation of GateRecurrent2dnoind"""
 	batch_size, channels, height, width = X.size()
-	H = torch.zeros_like(X)
+	H = torch.zeros_like(X).clone()
 	
 	# Forward pass from left to right
 	for w in range(width):
